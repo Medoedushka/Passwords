@@ -8,5 +8,6 @@ namespace PasswordsCollection
 {
     interface IViewer
     {
+        event EventHandler<EventArgs> CreateNewPas;
     }
 }

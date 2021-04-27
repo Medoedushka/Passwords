@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace PasswordsCollection
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IViewer
     {
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public event EventHandler<EventArgs> CreateNewPas;
+
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

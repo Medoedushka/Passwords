@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_PasswordsContainer = new System.Windows.Forms.Panel();
             this.btn_Close = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -45,20 +45,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pnl_PasswordsContainer);
             this.panel1.Location = new System.Drawing.Point(12, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(311, 307);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // pnl_PasswordsContainer
             // 
-            this.panel2.BackColor = System.Drawing.Color.MistyRose;
-            this.panel2.Location = new System.Drawing.Point(1, 1);
-            this.panel2.Margin = new System.Windows.Forms.Padding(1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 305);
-            this.panel2.TabIndex = 0;
+            this.pnl_PasswordsContainer.AutoScroll = true;
+            this.pnl_PasswordsContainer.BackColor = System.Drawing.Color.MistyRose;
+            this.pnl_PasswordsContainer.Location = new System.Drawing.Point(1, 1);
+            this.pnl_PasswordsContainer.Margin = new System.Windows.Forms.Padding(1);
+            this.pnl_PasswordsContainer.Name = "pnl_PasswordsContainer";
+            this.pnl_PasswordsContainer.Size = new System.Drawing.Size(309, 305);
+            this.pnl_PasswordsContainer.TabIndex = 0;
             // 
             // btn_Close
             // 
@@ -70,6 +71,7 @@
             this.btn_Close.Size = new System.Drawing.Size(26, 26);
             this.btn_Close.TabIndex = 1;
             this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // panel4
             // 
@@ -135,6 +137,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -147,7 +150,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Close;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_PasswordsContainer;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;

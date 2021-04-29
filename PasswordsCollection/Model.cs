@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PasswordsCollection
 {
-    class Model
+    public class Model
     {
     }
 }

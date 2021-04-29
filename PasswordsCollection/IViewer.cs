@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace PasswordsCollection
 {
-    interface IViewer
+    public interface IViewer
     {
+        event EventHandler<EventArgs> LoadPasswords;
         event EventHandler<EventArgs> CreateNewPas;
     }
 }

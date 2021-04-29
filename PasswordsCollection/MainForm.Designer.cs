@@ -31,14 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_New = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,16 +60,6 @@
             this.panel2.Size = new System.Drawing.Size(309, 305);
             this.panel2.TabIndex = 0;
             // 
-            // btn_New
-            // 
-            this.btn_New.Location = new System.Drawing.Point(411, 317);
-            this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(53, 38);
-            this.btn_New.TabIndex = 1;
-            this.btn_New.Text = "New";
-            this.btn_New.UseVisualStyleBackColor = true;
-            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
-            // 
             // btn_Close
             // 
             this.btn_Close.FlatAppearance.BorderSize = 0;
@@ -94,12 +82,10 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gold;
-            this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.btn_Close);
-            this.panel5.Controls.Add(this.btn_New);
             this.panel5.Font = new System.Drawing.Font("Gotham Pro Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
@@ -136,16 +122,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Created by Medoed";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Gotham Pro Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Название пароля:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,7 +146,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
@@ -178,7 +153,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }
 

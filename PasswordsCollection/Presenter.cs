@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace PasswordsCollection
 {
-    class Presenter
+    public class Presenter
     {
+        Model _model;
+        IViewer viewer;
+        public Presenter(IViewer viewer)
+        {
+            _model = new Model();
+            this.viewer = viewer;
+        }
     }
 }

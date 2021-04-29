@@ -18,6 +18,7 @@ namespace PasswordsCollection
         }
 
         public event EventHandler<EventArgs> CreateNewPas;
+        public event EventHandler<EventArgs> LoadPasswords;
 
         private void btn_New_Click(object sender, EventArgs e)
         {

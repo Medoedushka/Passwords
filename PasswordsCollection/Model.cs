@@ -51,14 +51,17 @@ namespace PasswordsCollection
             Button[] buttons = new Button[userPasswords.Count];
 
             int inc = 0;
-            int prevHeight = 50;
+            int prevHeight = 25, width = 200;
+            int h0 = 5;
             foreach(Button b in buttons)
             {
                 buttons[inc] = new Button
                 {
                     Text = userPasswords[inc].Name,
-                    Size = new System.Drawing.Size(100, prevHeight),
-                    Location = new System.Drawing.Point(5, 5 + inc*prevHeight),
+                    TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+                    Font = new System.Drawing.Font("Gotham Pro Medium", 9),
+                    Size = new System.Drawing.Size(width, prevHeight),
+                    Location = new System.Drawing.Point(5, h0 * (inc + 1) + prevHeight * inc),
                     
                 };
                 buttons[inc].Click += (object sender, EventArgs e) => { MessageBox.Show("Copy!"); };

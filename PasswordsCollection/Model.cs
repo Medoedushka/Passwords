@@ -51,7 +51,7 @@ namespace PasswordsCollection
             Button[] buttons = new Button[userPasswords.Count];
 
             int inc = 0;
-            int prevHeight = 25, width = 200;
+            int prevHeight = 25, width = 250;
             int h0 = 5;
             foreach(Button b in buttons)
             {
@@ -64,7 +64,15 @@ namespace PasswordsCollection
                     Location = new System.Drawing.Point(5, h0 * (inc + 1) + prevHeight * inc),
                     
                 };
-                buttons[inc].Click += (object sender, EventArgs e) => { MessageBox.Show("Copy!"); };
+                buttons[inc].Click += (object sender, EventArgs e) => {
+                    string foundPas = "";
+                    Button temp = (Button)sender;
+                    foreach (UserPasswords up in userPasswords)
+                    {
+                        if (temp.Text == up.Name)
+                            MessageBox.Show(up.Password);
+                    }
+                };
                 inc++;
             }
 

@@ -21,8 +21,14 @@ namespace PasswordsCollection
 
     public class Model
     {
-
+        public event Action<int> CopiedToClipboard;
         List<UserPasswords> userPasswords = new List<UserPasswords>();
+
+        //Константы параметров кнопки
+        const int BUTTON_HEIGHT = 25;
+        const int BUTTON_WIDTH = 250;
+        const int INDENT = 5;
+
 
         public Model()
         {
@@ -50,36 +56,34 @@ namespace PasswordsCollection
         {
             FillDictionary();
             Button[] buttons = new Button[userPasswords.Count];
-
-            int inc = 0;
-            int prevHeight = 25, width = 250;
-            int h0 = 5;
-            foreach(Button b in buttons)
+            
+            
+            for(int i = 0; i < buttons.Length; i++)
             {
-                buttons[inc] = new Button
+                buttons[i] = new Button
                 {
-                    Text = userPasswords[inc].Name,
+                    Text = userPasswords[i].Name,
                     TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
                     FlatStyle = FlatStyle.Flat,
                     Font = new System.Drawing.Font("Gotham Pro Medium", 9),
-                    Size = new System.Drawing.Size(width, prevHeight),
-                    Location = new System.Drawing.Point(5, h0 * (inc + 1) + prevHeight * inc),
-                    
+                    Size = new System.Drawing.Size(BUTTON_WIDTH, BUTTON_HEIGHT),
+                    Location = new System.Drawing.Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
+
                 };
-                buttons[inc].FlatAppearance.BorderSize = 0;
-                buttons[inc].Click += (object sender, EventArgs e) => {
+                buttons[i].FlatAppearance.BorderSize = 0;
+                buttons[i].Click += (object sender, EventArgs e) => {
                     Button temp = (Button)sender;
                     foreach (UserPasswords up in userPasswords)
                     {
                         if (temp.Text == up.Name)
                         {
                             Clipboard.SetData(DataFormats.Text, up.Password);
-                            MessageBox.Show("Copied");
-                        }     
-                        
+                            CopiedToClipboard?.Invoke(1);
+                            break;
+                        }
+
                     }
                 };
-                inc++;
             }
 
             return buttons;

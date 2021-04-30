@@ -14,6 +14,7 @@ namespace PasswordsCollection
         public Presenter(IViewer _viewer)
         {
             _model = new Model();
+
             this.viewer = _viewer;
             
             viewer.CreateNewPas += Viewer_CreateNewPas;

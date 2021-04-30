@@ -21,6 +21,7 @@ namespace PasswordsCollection
 
     public class Model
     {
+
         List<UserPasswords> userPasswords = new List<UserPasswords>();
 
         public Model()
@@ -59,18 +60,23 @@ namespace PasswordsCollection
                 {
                     Text = userPasswords[inc].Name,
                     TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+                    FlatStyle = FlatStyle.Flat,
                     Font = new System.Drawing.Font("Gotham Pro Medium", 9),
                     Size = new System.Drawing.Size(width, prevHeight),
                     Location = new System.Drawing.Point(5, h0 * (inc + 1) + prevHeight * inc),
                     
                 };
+                buttons[inc].FlatAppearance.BorderSize = 0;
                 buttons[inc].Click += (object sender, EventArgs e) => {
-                    string foundPas = "";
                     Button temp = (Button)sender;
                     foreach (UserPasswords up in userPasswords)
                     {
                         if (temp.Text == up.Name)
-                            MessageBox.Show(up.Password);
+                        {
+                            Clipboard.SetData(DataFormats.Text, up.Password);
+                            MessageBox.Show("Copied");
+                        }     
+                        
                     }
                 };
                 inc++;

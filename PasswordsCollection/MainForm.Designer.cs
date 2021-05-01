@@ -34,6 +34,7 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_Status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,6 +85,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gold;
+            this.panel5.Controls.Add(this.lbl_Status);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.label1);
@@ -93,6 +95,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(679, 444);
             this.panel5.TabIndex = 3;
+            // 
+            // lbl_Status
+            // 
+            this.lbl_Status.AutoSize = true;
+            this.lbl_Status.Font = new System.Drawing.Font("Gotham Pro Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.Location = new System.Drawing.Point(377, 6);
+            this.lbl_Status.Name = "lbl_Status";
+            this.lbl_Status.Size = new System.Drawing.Size(107, 22);
+            this.lbl_Status.TabIndex = 4;
+            this.lbl_Status.Text = "lbl_Status";
+            this.lbl_Status.Visible = false;
             // 
             // label2
             // 
@@ -156,6 +169,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Status;
     }
 }
 

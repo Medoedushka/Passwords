@@ -10,6 +10,7 @@ namespace PasswordsCollection
     public interface IViewer
     {
         Panel PasswordsButtons { get; set; }
+        Label LblStatus { get; set; }
 
         event EventHandler<EventArgs> LoadPasswords;
         event EventHandler<EventArgs> CreateNewPas;

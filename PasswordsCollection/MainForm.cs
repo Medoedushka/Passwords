@@ -12,7 +12,9 @@ namespace PasswordsCollection
 {
     public partial class MainForm : Form, IViewer
     {
+        Timer lbl_StatusTimer;
         public Panel PasswordsButtons { get => pnl_PasswordsContainer; set => pnl_PasswordsContainer = value; }
+        public Label LblStatus { get => lbl_Status; set => lbl_Status = value; }
 
         public MainForm()
         {
@@ -34,7 +36,6 @@ namespace PasswordsCollection
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             CreateNewPas?.Invoke(this, EventArgs.Empty);
         }
     }

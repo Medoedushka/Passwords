@@ -157,11 +157,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gotham Pro Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(365, 238);
+            this.label3.Location = new System.Drawing.Point(342, 238);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 13);
+            this.label3.Size = new System.Drawing.Size(159, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Created by Medoed";
+            this.label3.Text = "Created by Medoed v1.0";
             // 
             // Authorization
             // 
@@ -172,6 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Gotham Pro Medium", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

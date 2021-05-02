@@ -41,10 +41,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_Status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl_NewPass.SuspendLayout();
@@ -81,6 +81,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gold;
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.btn_AddNewPas);
             this.panel5.Controls.Add(this.pnl_NewPass);
             this.panel5.Controls.Add(this.panel2);
@@ -88,7 +89,6 @@
             this.panel5.Controls.Add(this.lbl_Status);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.btn_Close);
             this.panel5.Font = new System.Drawing.Font("Gotham Pro Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel5.Location = new System.Drawing.Point(3, 3);
@@ -169,30 +169,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password storage";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Gotham Pro Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(539, 425);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Created by Medoed";
-            // 
-            // btn_AddNewPas
-            // 
-            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
-            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
-            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
-            this.btn_AddNewPas.Name = "btn_AddNewPas";
-            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
-            this.btn_AddNewPas.TabIndex = 7;
-            this.btn_AddNewPas.UseVisualStyleBackColor = false;
-            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -215,6 +191,30 @@
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
+            // btn_AddNewPas
+            // 
+            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
+            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
+            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
+            this.btn_AddNewPas.Name = "btn_AddNewPas";
+            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
+            this.btn_AddNewPas.TabIndex = 7;
+            this.btn_AddNewPas.UseVisualStyleBackColor = false;
+            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gotham Pro Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(517, 425);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Created by Medoed v1.0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +224,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -245,7 +246,6 @@
         private System.Windows.Forms.Panel pnl_PasswordsContainer;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Status;
@@ -256,6 +256,7 @@
         private System.Windows.Forms.TextBox txb_NewPassName;
         private System.Windows.Forms.Label label3;
         private CircularButton btn_AddNewPas;
+        private System.Windows.Forms.Label label1;
     }
 }
 

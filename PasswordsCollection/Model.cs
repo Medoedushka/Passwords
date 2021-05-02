@@ -137,7 +137,7 @@ namespace PasswordsCollection
 
         public void AddNewPassword(string name, string password)
         {
-            if (FullPasswordsFile.Contains(name))
+            if (FullPasswordsFile.Contains(name + ":"))
                 throw new Exception("Пароль с таким именем уже существует!");
             FullPasswordsFile += name + ":" + password + "\n";
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))

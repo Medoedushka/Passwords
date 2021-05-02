@@ -32,27 +32,29 @@ namespace PasswordsCollection
             }
             else
             {
-                using (File.Create(UserAccessName)) { }
-                    if (txb_Login.Text != null)
+                if (!string.IsNullOrEmpty(txb_Login.Text))
+                {
+                    using (File.Create(UserAccessName)) { }
+                    string str = "Ваше ключевое слово: " + txb_Login.Text + ". Продолжить?";
+                    DialogResult res = MessageBox.Show(str, "Подтверждение операции", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
                     {
-                        string str = "Ваше ключевое слово: " + txb_Login.Text + ". Продолжить?";
-                        DialogResult res = MessageBox.Show(str, "Подтверждение операции", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (res == DialogResult.Yes)
-                        {
-                            string CodingString = txb_Login.Text + AdditionalString;
+                        string CodingString = txb_Login.Text + AdditionalString;
 
-                            //Coding Algorythm: y=x+5
-                            string result = "";
-                            for (int i = 0; i < CodingString.Length; i++)
-                            {
-                                int charIndex = (int)CodingString[i];
-                                double newCharIndex = charIndex + 5;
-                                char newChar = (char)newCharIndex;
-                                result += newChar;
-                            }
-                            File.WriteAllText(UserAccessName, result);
+                        //Coding Algorythm: y=x+5
+                        string result = "";
+                        for (int i = 0; i < CodingString.Length; i++)
+                        {
+                            int charIndex = (int)CodingString[i];
+                            double newCharIndex = charIndex + 5;
+                            char newChar = (char)newCharIndex;
+                            result += newChar;
                         }
+                        File.WriteAllText(UserAccessName, result);
                     }
+                }
+                else MessageBox.Show("Для создания нового пользователя необходимо ввести ключевое слово.",
+                    "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

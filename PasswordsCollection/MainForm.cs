@@ -53,7 +53,7 @@ namespace PasswordsCollection
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CreateNewPas?.Invoke(this, EventArgs.Empty);
+            LoadPasswords?.Invoke(this, EventArgs.Empty);
         }
     }
 }

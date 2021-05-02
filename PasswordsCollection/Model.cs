@@ -65,7 +65,7 @@ namespace PasswordsCollection
                     Text = userPasswords[i].Name,
                     TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
                     FlatStyle = FlatStyle.Flat,
-                    Font = new System.Drawing.Font("Gotham Pro Medium", 9),
+                    Font = new System.Drawing.Font("Gotham Pro Medium", 11),
                     Size = new System.Drawing.Size(BUTTON_WIDTH, BUTTON_HEIGHT),
                     Location = new System.Drawing.Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
 

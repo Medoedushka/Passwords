@@ -26,7 +26,7 @@ namespace PasswordsCollection
             LblStatusTimer.Interval = 500;
             LblStatusTimer.Tick += LblStatusTimer_Tick;
 
-            viewer.CreateNewPas += Viewer_CreateNewPas;
+            viewer.LoadPasswords += Viewer_LoadPasswords;
 
         }
 
@@ -62,7 +62,7 @@ namespace PasswordsCollection
             }
         }
 
-        private void Viewer_CreateNewPas(object sender, EventArgs e)
+        private void Viewer_LoadPasswords(object sender, EventArgs e)
         {
             Button[] but = _model.CreatePassButtons();
             foreach(Button b in but)

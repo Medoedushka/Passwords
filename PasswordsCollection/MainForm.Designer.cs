@@ -151,10 +151,10 @@
             // lbl_Status
             // 
             this.lbl_Status.AutoSize = true;
-            this.lbl_Status.Font = new System.Drawing.Font("Gotham Pro Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Status.Location = new System.Drawing.Point(377, 6);
+            this.lbl_Status.Font = new System.Drawing.Font("Gotham Pro Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Status.Location = new System.Drawing.Point(282, 7);
             this.lbl_Status.Name = "lbl_Status";
-            this.lbl_Status.Size = new System.Drawing.Size(107, 22);
+            this.lbl_Status.Size = new System.Drawing.Size(86, 17);
             this.lbl_Status.TabIndex = 4;
             this.lbl_Status.Text = "lbl_Status";
             this.lbl_Status.Visible = false;

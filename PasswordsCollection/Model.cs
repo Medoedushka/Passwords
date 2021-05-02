@@ -94,6 +94,8 @@ namespace PasswordsCollection
 
         public void AddNewPassword(string name, string password)
         {
+            if (FullPasswordsFile.Contains(name))
+                throw new Exception("Пароль с таким именем уже существует!");
             FullPasswordsFile += "\n" + name + ":" + password;
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
             {

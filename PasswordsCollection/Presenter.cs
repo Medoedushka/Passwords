@@ -40,7 +40,7 @@ namespace PasswordsCollection
                 viewer.PasswordsButtons.Controls.Clear();
                 Viewer_LoadPasswords(this, EventArgs.Empty);
             }
-            catch(ArgumentException ex)
+            catch(Exception ex)
             {
                 WriteToStatusLabel(ex.Message, Color.Crimson);
             }

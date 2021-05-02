@@ -12,11 +12,26 @@ namespace PasswordsCollection
 {
     public partial class MainForm : Form, IViewer
     {
-        Timer lbl_StatusTimer;
         public Panel PasswordsButtons { get => pnl_PasswordsContainer; set => pnl_PasswordsContainer = value; }
         public Label LblStatus { get => lbl_Status; set => lbl_Status = value; }
-        public string NewPassword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string NewPasswordName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string NewPassword
+        { 
+            get
+            {
+                if (!string.IsNullOrEmpty(txb_NewPass.Text))
+                    return txb_NewPass.Text;
+                else throw new ArgumentException("Не все поля были заполнены!");
+            }
+        }
+        public string NewPasswordName
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(txb_NewPassName.Text))
+                    return txb_NewPassName.Text;
+                else throw new ArgumentException("Не все поля были заполнены!");
+            }
+        }
 
         public MainForm()
         {

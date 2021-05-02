@@ -41,9 +41,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txb_NewPassName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txb_NewPass = new System.Windows.Forms.TextBox();
             this.circularButton1 = new PasswordsCollection.CircularButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -160,9 +160,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txb_NewPass);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txb_NewPassName);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(86, 364);
             this.panel3.Name = "panel3";
@@ -178,12 +178,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Имя пароля:";
             // 
-            // textBox1
+            // txb_NewPassName
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 24);
-            this.textBox1.TabIndex = 1;
+            this.txb_NewPassName.Location = new System.Drawing.Point(118, 13);
+            this.txb_NewPassName.Name = "txb_NewPassName";
+            this.txb_NewPassName.Size = new System.Drawing.Size(164, 24);
+            this.txb_NewPassName.TabIndex = 1;
             // 
             // label4
             // 
@@ -194,20 +194,20 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Пароль:";
             // 
-            // textBox2
+            // txb_NewPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 24);
-            this.textBox2.TabIndex = 1;
+            this.txb_NewPass.Location = new System.Drawing.Point(118, 43);
+            this.txb_NewPass.Name = "txb_NewPass";
+            this.txb_NewPass.Size = new System.Drawing.Size(164, 24);
+            this.txb_NewPass.TabIndex = 1;
             // 
             // circularButton1
             // 
-            this.circularButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(159)))), ((int)(((byte)(197)))));
+            this.circularButton1.BackColor = System.Drawing.Color.RoyalBlue;
             this.circularButton1.FlatAppearance.BorderSize = 0;
             this.circularButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.circularButton1.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularButton1.Image = ((System.Drawing.Image)(resources.GetObject("circularButton1.Image")));
+            this.circularButton1.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
             this.circularButton1.Location = new System.Drawing.Point(20, 377);
             this.circularButton1.Name = "circularButton1";
             this.circularButton1.Size = new System.Drawing.Size(50, 50);
@@ -250,9 +250,9 @@
         private System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txb_NewPass;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txb_NewPassName;
         private System.Windows.Forms.Label label3;
         private CircularButton circularButton1;
     }

@@ -9,8 +9,8 @@ namespace PasswordsCollection
 {
     public interface IViewer
     {
-        string NewPassword { get; set; }
-        string NewPasswordName { get; set; }
+        string NewPassword { get; }
+        string NewPasswordName { get; }
 
         Panel PasswordsButtons { get; set; }
         Label LblStatus { get; set; }

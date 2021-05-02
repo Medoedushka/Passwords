@@ -38,18 +38,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.pnl_PasswordsContainer);
-            this.panel1.Location = new System.Drawing.Point(12, 51);
+            this.panel1.Location = new System.Drawing.Point(9, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 307);
+            this.panel1.Size = new System.Drawing.Size(311, 317);
             this.panel1.TabIndex = 0;
             // 
             // pnl_PasswordsContainer
@@ -59,7 +66,7 @@
             this.pnl_PasswordsContainer.Location = new System.Drawing.Point(1, 1);
             this.pnl_PasswordsContainer.Margin = new System.Windows.Forms.Padding(1);
             this.pnl_PasswordsContainer.Name = "pnl_PasswordsContainer";
-            this.pnl_PasswordsContainer.Size = new System.Drawing.Size(309, 305);
+            this.pnl_PasswordsContainer.Size = new System.Drawing.Size(309, 315);
             this.pnl_PasswordsContainer.TabIndex = 0;
             // 
             // btn_Close
@@ -85,6 +92,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gold;
+            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.panel2);
+            this.panel5.Controls.Add(this.panel1);
             this.panel5.Controls.Add(this.lbl_Status);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.pictureBox1);
@@ -137,6 +147,58 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Created by Medoed";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(0, 361);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(701, 1);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(95, 364);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(375, 77);
+            this.panel3.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Имя пароля:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(118, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 24);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Пароль:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(118, 43);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(164, 24);
+            this.textBox2.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,7 +206,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(685, 450);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
@@ -155,6 +216,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -170,6 +233,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Status;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -15,6 +15,8 @@ namespace PasswordsCollection
         Timer lbl_StatusTimer;
         public Panel PasswordsButtons { get => pnl_PasswordsContainer; set => pnl_PasswordsContainer = value; }
         public Label LblStatus { get => lbl_Status; set => lbl_Status = value; }
+        public string NewPassword { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string NewPasswordName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public MainForm()
         {

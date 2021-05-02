@@ -51,6 +51,12 @@ namespace PasswordsCollection
             {
                 viewer.LblStatus.Text = "Скопированно!";
                 viewer.LblStatus.ForeColor = Color.FromArgb(0, 40, 255);
+
+                //сброс до значений по умолчанию
+                viewer.LblStatus.Visible = false;
+                LblStatusTimer.Stop();
+                lblStatusCounter = 0;
+
                 LblStatusTimer.Start();
                 LblStatusTimer_Tick(this, EventArgs.Empty);
             }

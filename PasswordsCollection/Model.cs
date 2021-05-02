@@ -40,7 +40,7 @@ namespace PasswordsCollection
 
         private void FillList()
         {
-            FileStream fs = new FileStream(PASSWORDS_PATH, FileMode.Open);
+            FileStream fs = new FileStream(PASSWORDS_PATH, FileMode.OpenOrCreate);
             using (StreamReader sr = new StreamReader(fs))
             {
                 FullPasswordsFile = sr.ReadToEnd();
@@ -51,6 +51,9 @@ namespace PasswordsCollection
 
                 foreach (string s in lines)
                 {
+                    if (string.IsNullOrEmpty(s))
+                        continue;
+
                     string[] el = s.Split(':');
                     userPasswords.Add(new UserPasswords(el[0], el[1]));
                 }
@@ -111,12 +114,8 @@ namespace PasswordsCollection
                             {
                                 if (buttons[k, 0].Text == up.Name)
                                 {
-                                    string del = up.Name + ":" + up.Password;
-                                    int d = FullPasswordsFile.IndexOf(del);
-                                    if (d != 0)
-                                        FullPasswordsFile = FullPasswordsFile.Remove(d - 1, del.Length);
-                                    else
-                                        FullPasswordsFile = FullPasswordsFile.Remove(d, del.Length + 1 > FullPasswordsFile.Length ? del.Length : del.Length + 1);
+                                    string del = up.Name + ":" + up.Password + "\n";
+                                    FullPasswordsFile = FullPasswordsFile.Remove(FullPasswordsFile.IndexOf(del), del.Length);
                                     using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
                                     {
                                         sw.Write(FullPasswordsFile);
@@ -139,7 +138,7 @@ namespace PasswordsCollection
         {
             if (FullPasswordsFile.Contains(name))
                 throw new Exception("Пароль с таким именем уже существует!");
-            FullPasswordsFile += "\n" + name + ":" + password;
+            FullPasswordsFile += name + ":" + password + "\n";
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
             {
                 sw.Write(FullPasswordsFile);

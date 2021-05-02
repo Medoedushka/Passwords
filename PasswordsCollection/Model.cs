@@ -80,7 +80,7 @@ namespace PasswordsCollection
                     Size = new System.Drawing.Size(BUTTON_WIDTH, BUTTON_HEIGHT),
                     Location = new System.Drawing.Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
                 };
-                buttons[i, 0].FlatAppearance.BorderSize = 1;
+                buttons[i, 0].FlatAppearance.BorderSize = 0;
                 buttons[i, 0].Click += (object sender, EventArgs e) => {
                     Button temp = (Button)sender;
                     foreach (UserPasswords up in userPasswords)
@@ -97,12 +97,13 @@ namespace PasswordsCollection
 
                 buttons[i, 1] = new Button
                 {
-                    Text = "D",
+                    Text = "",
                     FlatStyle = FlatStyle.Flat,
                     Size = new System.Drawing.Size(25, BUTTON_HEIGHT),
                     Location = new System.Drawing.Point(10 + BUTTON_WIDTH, INDENT * (i + 1) + BUTTON_HEIGHT * i),
+                    Image = Properties.Resources.trash_25px
                 };
-                buttons[i, 1].FlatAppearance.BorderSize = 1;
+                buttons[i, 1].FlatAppearance.BorderSize = 0;
                 buttons[i, 1].Click += (object sender, EventArgs e) =>
                 {
                     Button temp = (Button)sender;

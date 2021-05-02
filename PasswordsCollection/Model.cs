@@ -56,6 +56,7 @@ namespace PasswordsCollection
 
         public Button[] CreatePassButtons()
         {
+            userPasswords.Clear();
             FillList();
             Button[] buttons = new Button[userPasswords.Count];
             

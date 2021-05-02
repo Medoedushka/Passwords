@@ -35,6 +35,10 @@ namespace PasswordsCollection
             try
             {
                 _model.AddNewPassword(viewer.NewPasswordName, viewer.NewPassword);
+                WriteToStatusLabel("Новый пароль добавлен!", Color.FromArgb(68, 161, 70));
+
+                viewer.PasswordsButtons.Controls.Clear();
+                Viewer_LoadPasswords(this, EventArgs.Empty);
             }
             catch(ArgumentException ex)
             {

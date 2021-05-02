@@ -73,6 +73,9 @@ namespace PasswordsCollection
             else
             {
                 CreateNewPas?.Invoke(this, EventArgs.Empty);
+                btn_AddNewPas.BackColor = Color.DodgerBlue;
+                btn_AddNewPas.Image = Properties.Resources.plus_math_30px;
+                NewPassTimer.Start();
             }
 
         }
@@ -81,10 +84,21 @@ namespace PasswordsCollection
         {
             if (PanelExpanded == false)
             {
-                pnl_NewPass.Width += 10;
-                if (pnl_NewPass.Width == 290)
+                pnl_NewPass.Width += 15;
+                if (pnl_NewPass.Width >= 290)
                 {
+                    pnl_NewPass.Width = 290;
                     PanelExpanded = true;
+                    NewPassTimer.Stop();
+                }
+            }
+            else
+            {
+                pnl_NewPass.Width -= 15;
+                if (pnl_NewPass.Width <= 0)
+                {
+                    pnl_NewPass.Width = 0;
+                    PanelExpanded = false;
                     NewPassTimer.Stop();
                 }
             }

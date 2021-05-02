@@ -42,9 +42,9 @@
             this.lbl_Status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Close = new System.Windows.Forms.Button();
+            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl_NewPass.SuspendLayout();
@@ -179,20 +179,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Created by Medoed";
             // 
-            // btn_AddNewPas
-            // 
-            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
-            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
-            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
-            this.btn_AddNewPas.Name = "btn_AddNewPas";
-            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
-            this.btn_AddNewPas.TabIndex = 7;
-            this.btn_AddNewPas.UseVisualStyleBackColor = false;
-            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -214,6 +200,20 @@
             this.btn_Close.TabIndex = 1;
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // btn_AddNewPas
+            // 
+            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
+            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
+            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
+            this.btn_AddNewPas.Name = "btn_AddNewPas";
+            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
+            this.btn_AddNewPas.TabIndex = 7;
+            this.btn_AddNewPas.UseVisualStyleBackColor = false;
+            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
             // 
             // MainForm
             // 

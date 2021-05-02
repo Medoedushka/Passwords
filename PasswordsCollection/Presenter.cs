@@ -20,6 +20,7 @@ namespace PasswordsCollection
         {
             _model = new Model();
             _model.CopiedToClipboard += _model_CopiedToClipboard;
+            _model.PasswordDeleted += _model_PasswordDeleted;
 
             this.viewer = _viewer;
             LblStatusTimer = new Timer();
@@ -28,6 +29,13 @@ namespace PasswordsCollection
 
             viewer.LoadPasswords += Viewer_LoadPasswords;
             viewer.CreateNewPas += Viewer_CreateNewPas;
+        }
+
+        private void _model_PasswordDeleted()
+        {
+            WriteToStatusLabel("Пароль удалён", Color.FromArgb(68, 161, 70));
+            viewer.PasswordsButtons.Controls.Clear();
+            Viewer_LoadPasswords(this, EventArgs.Empty);
         }
 
         private void Viewer_CreateNewPas(object sender, EventArgs e)
@@ -80,7 +88,9 @@ namespace PasswordsCollection
 
         private void Viewer_LoadPasswords(object sender, EventArgs e)
         {
-            Button[] but = _model.CreatePassButtons();
+            Button[,] but = _model.CreatePassButtons();
+            if (but == null)
+                return;
             foreach(Button b in but)
             {
                 viewer.PasswordsButtons.Controls.Add(b);

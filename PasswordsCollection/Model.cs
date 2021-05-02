@@ -22,11 +22,12 @@ namespace PasswordsCollection
     public class Model
     {
         public event Action<int> CopiedToClipboard;
+        public event Action PasswordDeleted;
         List<UserPasswords> userPasswords = new List<UserPasswords>();
 
         //Константы параметров кнопки
         const int BUTTON_HEIGHT = 25;
-        const int BUTTON_WIDTH = 250;
+        const int BUTTON_WIDTH = 230;
         const int INDENT = 5;
 
         const string PASSWORDS_PATH = "data.txt";
@@ -43,6 +44,8 @@ namespace PasswordsCollection
             using (StreamReader sr = new StreamReader(fs))
             {
                 FullPasswordsFile = sr.ReadToEnd();
+                if (string.IsNullOrEmpty(FullPasswordsFile))
+                    return;
                 FullPasswordsFile.Replace("\r", "");
                 string[] lines = FullPasswordsFile.Split('\n');
 
@@ -54,16 +57,18 @@ namespace PasswordsCollection
             }
         }
 
-        public Button[] CreatePassButtons()
+        public Button[,] CreatePassButtons()
         {
             userPasswords.Clear();
             FillList();
-            Button[] buttons = new Button[userPasswords.Count];
+            if (string.IsNullOrEmpty(FullPasswordsFile))
+                return null;
+            Button[,] buttons = new Button[userPasswords.Count, 2];
             
             
-            for(int i = 0; i < buttons.Length; i++)
+            for(int i = 0; i < userPasswords.Count; i++)
             {
-                buttons[i] = new Button
+                buttons[i, 0] = new Button
                 {
                     Text = userPasswords[i].Name,
                     TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
@@ -71,10 +76,9 @@ namespace PasswordsCollection
                     Font = new System.Drawing.Font("Gotham Pro Medium", 11),
                     Size = new System.Drawing.Size(BUTTON_WIDTH, BUTTON_HEIGHT),
                     Location = new System.Drawing.Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
-
                 };
-                buttons[i].FlatAppearance.BorderSize = 0;
-                buttons[i].Click += (object sender, EventArgs e) => {
+                buttons[i, 0].FlatAppearance.BorderSize = 1;
+                buttons[i, 0].Click += (object sender, EventArgs e) => {
                     Button temp = (Button)sender;
                     foreach (UserPasswords up in userPasswords)
                     {
@@ -85,6 +89,45 @@ namespace PasswordsCollection
                             break;
                         }
 
+                    }
+                };
+
+                buttons[i, 1] = new Button
+                {
+                    Text = "D",
+                    FlatStyle = FlatStyle.Flat,
+                    Size = new System.Drawing.Size(25, BUTTON_HEIGHT),
+                    Location = new System.Drawing.Point(10 + BUTTON_WIDTH, INDENT * (i + 1) + BUTTON_HEIGHT * i),
+                };
+                buttons[i, 1].FlatAppearance.BorderSize = 1;
+                buttons[i, 1].Click += (object sender, EventArgs e) =>
+                {
+                    Button temp = (Button)sender;
+                    for(int k = 0; k < userPasswords.Count; k++)
+                    {
+                        if (buttons[k, 1] == temp)
+                        {
+                            foreach (UserPasswords up in userPasswords)
+                            {
+                                if (buttons[k, 0].Text == up.Name)
+                                {
+                                    string del = up.Name + ":" + up.Password;
+                                    int d = FullPasswordsFile.IndexOf(del);
+                                    if (d != 0)
+                                        FullPasswordsFile = FullPasswordsFile.Remove(d - 1, del.Length);
+                                    else
+                                        FullPasswordsFile = FullPasswordsFile.Remove(d, del.Length + 1 > FullPasswordsFile.Length ? del.Length : del.Length + 1);
+                                    using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
+                                    {
+                                        sw.Write(FullPasswordsFile);
+                                    }
+                                    PasswordDeleted?.Invoke();
+                                    break;
+                                }
+
+                            }
+                            break;
+                        }
                     }
                 };
             }

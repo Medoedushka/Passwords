@@ -142,6 +142,18 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="circularButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QUCDRoujJcDLQAAAUFJREFU
+        WEftl1Fqg0AURf1tPtufZiNJ6YKyj26lSbOutJtooYH0nvAG3tSnIsoYyFw4yDx17p1EfdpUzanL2zDF
+        5EwfxKN4si3jRcKsxV6cxJdt3wX1csJMvIgfcXEwpl5OmIlX8St8GMbUywkzM61hMmFmpjVMJszM9A7C
+        MMFINiIKQz06vpOW3M5nsRWssAsMd+IsfBjG1NkfnZdgfnx6w6zEh/gWrLKP/0F8oOh4D/PTSvBri6Kg
+        2X2KyGRu8MGvLYq2k6YXnTw3+AyGuZlfhv/wKOi+0X/tmXLNMD/XZu81A7yP8BoQ3QWJqXcT81/fe6Cl
+        tGMEGLJKH4Yx9ej4TibJJmGFURjq5YSZmdYwmTAz0xomE2ZmWsNkwkzc1HcTT1Ae6fQYmh7bg1jkixLo
+        LTS7xLXXQDElwz6q5lPT/AEi/s3NW49hxwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAA1ZJREFUaEPt

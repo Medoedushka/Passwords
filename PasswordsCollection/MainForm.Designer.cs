@@ -164,7 +164,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(95, 364);
+            this.panel3.Location = new System.Drawing.Point(86, 364);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(375, 77);
             this.panel3.TabIndex = 6;
@@ -203,12 +203,14 @@
             // 
             // circularButton1
             // 
-            this.circularButton1.BackColor = System.Drawing.Color.Firebrick;
+            this.circularButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(159)))), ((int)(((byte)(197)))));
             this.circularButton1.FlatAppearance.BorderSize = 0;
             this.circularButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButton1.Location = new System.Drawing.Point(402, 79);
+            this.circularButton1.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.circularButton1.Image = ((System.Drawing.Image)(resources.GetObject("circularButton1.Image")));
+            this.circularButton1.Location = new System.Drawing.Point(20, 377);
             this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(130, 130);
+            this.circularButton1.Size = new System.Drawing.Size(50, 50);
             this.circularButton1.TabIndex = 7;
             this.circularButton1.UseVisualStyleBackColor = false;
             // 

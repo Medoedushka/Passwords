@@ -76,7 +76,7 @@ namespace PasswordsCollection
             }
             else
             {
-                MessageBox.Show("Для использования приложения необходимо создать нового пользователя", "Ошибка авторизации",
+                MessageBox.Show("Для использования приложения необходимо создать нового пользователя.", "Ошибка авторизации",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 return;

@@ -73,7 +73,7 @@ namespace PasswordsCollection
             else
             {
                 CreateNewPas?.Invoke(this, EventArgs.Empty);
-                btn_AddNewPas.BackColor = Color.DodgerBlue;
+                btn_AddNewPas.BackColor = Color.RoyalBlue;
                 btn_AddNewPas.Image = Properties.Resources.plus_math_30px;
                 NewPassTimer.Start();
             }

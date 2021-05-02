@@ -27,7 +27,19 @@ namespace PasswordsCollection
             LblStatusTimer.Tick += LblStatusTimer_Tick;
 
             viewer.LoadPasswords += Viewer_LoadPasswords;
+            viewer.CreateNewPas += Viewer_CreateNewPas;
+        }
 
+        private void Viewer_CreateNewPas(object sender, EventArgs e)
+        {
+            try
+            {
+                _model.AddNewPassword(viewer.NewPasswordName, viewer.NewPassword);
+            }
+            catch(ArgumentException ex)
+            {
+                WriteToStatusLabel(ex.Message, Color.Crimson);
+            }
         }
 
         private void LblStatusTimer_Tick(object sender, EventArgs e)
@@ -69,6 +81,20 @@ namespace PasswordsCollection
             {
                 viewer.PasswordsButtons.Controls.Add(b);
             }
+        }
+
+        private void WriteToStatusLabel(string message, Color foreColor)
+        {
+            viewer.LblStatus.Text = message;
+            viewer.LblStatus.ForeColor = foreColor;
+
+            //сброс до значений по умолчанию
+            viewer.LblStatus.Visible = false;
+            LblStatusTimer.Stop();
+            lblStatusCounter = 0;
+
+            LblStatusTimer.Start();
+            LblStatusTimer_Tick(this, EventArgs.Empty);
         }
     }
 }

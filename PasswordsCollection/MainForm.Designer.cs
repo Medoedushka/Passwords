@@ -31,24 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_PasswordsContainer = new System.Windows.Forms.Panel();
-            this.btn_Close = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pnl_NewPass = new System.Windows.Forms.Panel();
+            this.txb_NewPass = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txb_NewPassName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_Status = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txb_NewPassName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txb_NewPass = new System.Windows.Forms.TextBox();
-            this.circularButton1 = new PasswordsCollection.CircularButton();
+            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pnl_NewPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,18 +70,6 @@
             this.pnl_PasswordsContainer.Size = new System.Drawing.Size(309, 315);
             this.pnl_PasswordsContainer.TabIndex = 0;
             // 
-            // btn_Close
-            // 
-            this.btn_Close.FlatAppearance.BorderSize = 0;
-            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("btn_Close.Image")));
-            this.btn_Close.Location = new System.Drawing.Point(650, 2);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(26, 26);
-            this.btn_Close.TabIndex = 1;
-            this.btn_Close.UseVisualStyleBackColor = true;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
@@ -93,8 +81,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Gold;
-            this.panel5.Controls.Add(this.circularButton1);
-            this.panel5.Controls.Add(this.panel3);
+            this.panel5.Controls.Add(this.btn_AddNewPas);
+            this.panel5.Controls.Add(this.pnl_NewPass);
             this.panel5.Controls.Add(this.panel2);
             this.panel5.Controls.Add(this.panel1);
             this.panel5.Controls.Add(this.lbl_Status);
@@ -107,6 +95,58 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(679, 444);
             this.panel5.TabIndex = 3;
+            // 
+            // pnl_NewPass
+            // 
+            this.pnl_NewPass.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_NewPass.Controls.Add(this.txb_NewPass);
+            this.pnl_NewPass.Controls.Add(this.label4);
+            this.pnl_NewPass.Controls.Add(this.txb_NewPassName);
+            this.pnl_NewPass.Controls.Add(this.label3);
+            this.pnl_NewPass.Location = new System.Drawing.Point(86, 364);
+            this.pnl_NewPass.Name = "pnl_NewPass";
+            this.pnl_NewPass.Size = new System.Drawing.Size(0, 77);
+            this.pnl_NewPass.TabIndex = 6;
+            // 
+            // txb_NewPass
+            // 
+            this.txb_NewPass.Location = new System.Drawing.Point(118, 43);
+            this.txb_NewPass.Name = "txb_NewPass";
+            this.txb_NewPass.Size = new System.Drawing.Size(164, 24);
+            this.txb_NewPass.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Пароль:";
+            // 
+            // txb_NewPassName
+            // 
+            this.txb_NewPassName.Location = new System.Drawing.Point(118, 13);
+            this.txb_NewPassName.Name = "txb_NewPassName";
+            this.txb_NewPassName.Size = new System.Drawing.Size(164, 24);
+            this.txb_NewPassName.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Имя пароля:";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(0, 361);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(701, 1);
+            this.panel2.TabIndex = 5;
             // 
             // lbl_Status
             // 
@@ -129,16 +169,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password storage";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -149,70 +179,41 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Created by Medoed";
             // 
-            // panel2
+            // btn_AddNewPas
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 361);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(701, 1);
-            this.panel2.TabIndex = 5;
+            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
+            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
+            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
+            this.btn_AddNewPas.Name = "btn_AddNewPas";
+            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
+            this.btn_AddNewPas.TabIndex = 7;
+            this.btn_AddNewPas.UseVisualStyleBackColor = false;
+            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
             // 
-            // panel3
+            // pictureBox1
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.txb_NewPass);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.txb_NewPassName);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(86, 364);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(375, 77);
-            this.panel3.TabIndex = 6;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // btn_Close
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Имя пароля:";
-            // 
-            // txb_NewPassName
-            // 
-            this.txb_NewPassName.Location = new System.Drawing.Point(118, 13);
-            this.txb_NewPassName.Name = "txb_NewPassName";
-            this.txb_NewPassName.Size = new System.Drawing.Size(164, 24);
-            this.txb_NewPassName.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Пароль:";
-            // 
-            // txb_NewPass
-            // 
-            this.txb_NewPass.Location = new System.Drawing.Point(118, 43);
-            this.txb_NewPass.Name = "txb_NewPass";
-            this.txb_NewPass.Size = new System.Drawing.Size(164, 24);
-            this.txb_NewPass.TabIndex = 1;
-            // 
-            // circularButton1
-            // 
-            this.circularButton1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.circularButton1.FlatAppearance.BorderSize = 0;
-            this.circularButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButton1.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.circularButton1.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
-            this.circularButton1.Location = new System.Drawing.Point(20, 377);
-            this.circularButton1.Name = "circularButton1";
-            this.circularButton1.Size = new System.Drawing.Size(50, 50);
-            this.circularButton1.TabIndex = 7;
-            this.circularButton1.UseVisualStyleBackColor = false;
+            this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("btn_Close.Image")));
+            this.btn_Close.Location = new System.Drawing.Point(650, 2);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(26, 26);
+            this.btn_Close.TabIndex = 1;
+            this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // MainForm
             // 
@@ -230,9 +231,9 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.pnl_NewPass.ResumeLayout(false);
+            this.pnl_NewPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -249,12 +250,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Status;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnl_NewPass;
         private System.Windows.Forms.TextBox txb_NewPass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txb_NewPassName;
         private System.Windows.Forms.Label label3;
-        private CircularButton circularButton1;
+        private CircularButton btn_AddNewPas;
     }
 }
 

@@ -29,20 +29,22 @@ namespace PasswordsCollection
         const int BUTTON_WIDTH = 250;
         const int INDENT = 5;
 
+        const string PASSWORDS_PATH = "data.txt";
+        string FullPasswordsFile;
 
         public Model()
         {
 
         }
 
-        private void FillDictionary()
+        private void FillList()
         {
-            FileStream fs = new FileStream("data.txt", FileMode.Open);
+            FileStream fs = new FileStream(PASSWORDS_PATH, FileMode.Open);
             using (StreamReader sr = new StreamReader(fs))
             {
-                string fullFile = sr.ReadToEnd();
-                fullFile.Replace("\r", "");
-                string[] lines = fullFile.Split('\n');
+                FullPasswordsFile = sr.ReadToEnd();
+                FullPasswordsFile.Replace("\r", "");
+                string[] lines = FullPasswordsFile.Split('\n');
 
                 foreach (string s in lines)
                 {
@@ -54,7 +56,7 @@ namespace PasswordsCollection
 
         public Button[] CreatePassButtons()
         {
-            FillDictionary();
+            FillList();
             Button[] buttons = new Button[userPasswords.Count];
             
             
@@ -87,6 +89,15 @@ namespace PasswordsCollection
             }
 
             return buttons;
+        }
+
+        public void AddNewPassword(string name, string password)
+        {
+            FullPasswordsFile += "\n" + name + ":" + password;
+            using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
+            {
+                sw.Write(FullPasswordsFile);
+            }
         }
 
     }

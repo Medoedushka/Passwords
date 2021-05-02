@@ -33,11 +33,17 @@ namespace PasswordsCollection
             }
         }
 
+        Timer NewPassTimer;
+        bool PanelExpanded = false;
+
+
         public MainForm()
         {
             InitializeComponent();
+            NewPassTimer = new Timer();
+            NewPassTimer.Interval = 5;
+            NewPassTimer.Tick += NewPassTimer_Tick;
         }
-
         public event EventHandler<EventArgs> CreateNewPas;
         public event EventHandler<EventArgs> LoadPasswords;
 
@@ -54,6 +60,34 @@ namespace PasswordsCollection
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadPasswords?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btn_AddNewPas_Click(object sender, EventArgs e)
+        {
+            if (PanelExpanded == false)
+            {
+                btn_AddNewPas.BackColor = Color.GreenYellow;
+                btn_AddNewPas.Image = Properties.Resources.checkmark_30px;
+                NewPassTimer.Start();
+            }
+            else
+            {
+                CreateNewPas?.Invoke(this, EventArgs.Empty);
+            }
+
+        }
+
+        private void NewPassTimer_Tick(object sender, EventArgs e)
+        {
+            if (PanelExpanded == false)
+            {
+                pnl_NewPass.Width += 10;
+                if (pnl_NewPass.Width == 290)
+                {
+                    PanelExpanded = true;
+                    NewPassTimer.Stop();
+                }
+            }
         }
     }
 }

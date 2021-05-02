@@ -63,6 +63,16 @@ namespace PasswordsCollection.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkmark_30px {
+            get {
+                object obj = ResourceManager.GetObject("checkmark_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_math_30px {
             get {
                 object obj = ResourceManager.GetObject("plus_math_30px", resourceCulture);

@@ -17,5 +17,6 @@ namespace PasswordsCollection
 
         event EventHandler<EventArgs> LoadPasswords;
         event EventHandler<EventArgs> CreateNewPas;
+        event Action<bool> OpenLogInForm;
     }
 }

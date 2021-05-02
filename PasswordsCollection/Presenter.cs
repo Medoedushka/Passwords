@@ -29,6 +29,13 @@ namespace PasswordsCollection
 
             viewer.LoadPasswords += Viewer_LoadPasswords;
             viewer.CreateNewPas += Viewer_CreateNewPas;
+            viewer.OpenLogInForm += Viewer_OpenLogInForm;
+        }
+
+        private void Viewer_OpenLogInForm(bool obj)
+        {
+            Authorization authorization = new Authorization(obj);
+            authorization.ShowDialog();
         }
 
         private void _model_PasswordDeleted()

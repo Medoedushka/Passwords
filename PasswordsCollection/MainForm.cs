@@ -46,6 +46,7 @@ namespace PasswordsCollection
         }
         public event EventHandler<EventArgs> CreateNewPas;
         public event EventHandler<EventArgs> LoadPasswords;
+        public event Action<bool> OpenLogInForm;
 
         private void btn_New_Click(object sender, EventArgs e)
         {
@@ -59,6 +60,7 @@ namespace PasswordsCollection
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            OpenLogInForm?.Invoke(false);
             LoadPasswords?.Invoke(this, EventArgs.Empty);
         }
 

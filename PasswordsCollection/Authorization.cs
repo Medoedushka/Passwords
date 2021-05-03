@@ -15,10 +15,12 @@ namespace PasswordsCollection
     {
         string UserAccessName = "useraccess.txt";
         string AdditionalString = "_PasswordsCollection";
+        bool AuthorizationSuccessful = false;
 
         public Authorization(bool confirmAction)
         {
             InitializeComponent();
+            AuthorizationSuccessful = false;
             if (confirmAction)
                 btn_NewUser.Enabled = false;
             else btn_NewUser.Enabled = true;
@@ -73,7 +75,10 @@ namespace PasswordsCollection
                 }
                 UserWord = UserWord.Remove(UserWord.IndexOf(AdditionalString), AdditionalString.Length);
                 if (UserWord == txb_Login.Text)
+                {
+                    AuthorizationSuccessful = true;
                     this.Close();
+                }
                 else MessageBox.Show("Указано неверное ключевое слово!", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -83,6 +88,12 @@ namespace PasswordsCollection
 
                 return;
             }
+        }
+
+        private void Authorization_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AuthorizationSuccessful)
+                Application.Exit();
         }
     }
 }

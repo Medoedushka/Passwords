@@ -78,6 +78,8 @@ namespace PasswordsCollection
                 btn_AddNewPas.BackColor = Color.RoyalBlue;
                 btn_AddNewPas.Image = Properties.Resources.plus_math_30px;
                 NewPassTimer.Start();
+                txb_NewPass.Text = "";
+                txb_NewPassName.Text = "";
             }
 
         }

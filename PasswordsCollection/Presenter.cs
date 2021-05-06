@@ -75,36 +75,10 @@ namespace PasswordsCollection
             }
         }
 
-        private void LblStatusTimer_Tick(object sender, EventArgs e)
-        {
-            if (lblStatusCounter < 2)
-            {
-                lblStatusCounter++;
-                viewer.LblStatus.Visible = true;
-            }
-            else
-            {
-                lblStatusCounter = 0;
-                viewer.LblStatus.Visible = false;
-                LblStatusTimer.Stop();
-            }
-        }
-
         private void _model_CopiedToClipboard(int obj)
         {
             if (obj == 1)
-            {
-                viewer.LblStatus.Text = "Скопированно!";
-                viewer.LblStatus.ForeColor = Color.FromArgb(0, 40, 255);
-
-                //сброс до значений по умолчанию
-                viewer.LblStatus.Visible = false;
-                LblStatusTimer.Stop();
-                lblStatusCounter = 0;
-
-                LblStatusTimer.Start();
-                LblStatusTimer_Tick(this, EventArgs.Empty);
-            }
+                WriteToStatusLabel("Скопированно!", Color.FromArgb(0, 40, 255));
         }
 
         private void Viewer_LoadPasswords(object sender, EventArgs e)
@@ -121,6 +95,20 @@ namespace PasswordsCollection
             }
         }
 
+        private void LblStatusTimer_Tick(object sender, EventArgs e)
+        {
+            if (lblStatusCounter < 2)
+            {
+                lblStatusCounter++;
+                viewer.LblStatus.Visible = true;
+            }
+            else
+            {
+                lblStatusCounter = 0;
+                viewer.LblStatus.Visible = false;
+                LblStatusTimer.Stop();
+            }
+        }
         private void WriteToStatusLabel(string message, Color foreColor)
         {
             viewer.LblStatus.Text = message;

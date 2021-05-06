@@ -61,8 +61,16 @@ namespace PasswordsCollection
 
                     string[] el = s.Split(':');
                     int bracketInd = el[1].IndexOf('[');
-                    string format = el[1].Substring(bracketInd, el[1].IndexOf(']') - bracketInd + 1);
-                    el[1] = el[1].Remove(bracketInd, format.Length);
+                    string format;
+
+                    //проверка для старых версий, где отсутствовала строка с форматом кнопки
+                    if (bracketInd == -1)
+                        format = ConvertToStringFromColor(Color.Black, Color.Gold);
+                    else
+                    {
+                        format = el[1].Substring(bracketInd, el[1].IndexOf(']') - bracketInd + 1);
+                        el[1] = el[1].Remove(bracketInd, format.Length);
+                    }
                     userPasswords.Add(new UserPasswords(el[0], el[1], format));
                 }
             }

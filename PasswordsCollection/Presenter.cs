@@ -30,6 +30,20 @@ namespace PasswordsCollection
             viewer.LoadPasswords += Viewer_LoadPasswords;
             viewer.CreateNewPas += Viewer_CreateNewPas;
             viewer.OpenLogInForm += Viewer_OpenLogInForm;
+            viewer.ApplyButtonStyle += Viewer_ApplyButtonStyle;
+        }
+
+        private void Viewer_ApplyButtonStyle(object sender, EventArgs e)
+        {
+            try
+            {
+                _model.ChangeButtonStyle(viewer.ButtonNames.Text, viewer.ForeColorButton.BackColor, viewer.BackColorButton.BackColor);
+                WriteToStatusLabel("Изменения применены!", Color.FromArgb(68, 161, 70));
+            }
+            catch(Exception ex)
+            {
+                WriteToStatusLabel(ex.Message, Color.Crimson);
+            }
         }
 
         private void Viewer_OpenLogInForm(bool obj)

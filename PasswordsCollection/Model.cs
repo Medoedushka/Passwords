@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PasswordsCollection
 {
@@ -12,6 +13,8 @@ namespace PasswordsCollection
     {
         public string Name { get; set; }
         public string Password { get; set; }
+        public Button UP_Button { get; set; }
+
         public UserPasswords(string name, string pas)
         {
             Name = name;
@@ -95,6 +98,8 @@ namespace PasswordsCollection
                     }
                 };
 
+                userPasswords[i].UP_Button = buttons[i, 0];
+
                 buttons[i, 1] = new Button
                 {
                     Text = "",
@@ -143,6 +148,23 @@ namespace PasswordsCollection
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
             {
                 sw.Write(FullPasswordsFile);
+            }
+        }
+
+        public void ChangeButtonStyle(string ButtonName, Color ForeColor, Color BackColor)
+        {
+            foreach(UserPasswords up in userPasswords)
+            {
+                if (ButtonName == up.Name && up.UP_Button != null)
+                {
+                    up.UP_Button.ForeColor = ForeColor;
+                    up.UP_Button.BackColor = BackColor;
+                    break;
+                }
+                else
+                {
+                    throw new Exception("Искомая кнопка не найдена!");
+                }
             }
         }
 

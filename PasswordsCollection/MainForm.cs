@@ -32,6 +32,9 @@ namespace PasswordsCollection
                 else throw new ArgumentException("Не все поля были заполнены!");
             }
         }
+        public PictureBox ForeColorButton { get => pcb_ForeColor; set => pcb_ForeColor = value; }
+        public PictureBox BackColorButton { get => pcb_BackColor; set => pcb_BackColor = value; }
+        public ComboBox ButtonNames { get => cmb_ButtonName; set => cmb_ButtonName = value; }
 
         Timer NewPassTimer;
         bool PanelExpanded = false;
@@ -47,6 +50,7 @@ namespace PasswordsCollection
         public event EventHandler<EventArgs> CreateNewPas;
         public event EventHandler<EventArgs> LoadPasswords;
         public event Action<bool> OpenLogInForm;
+        public event EventHandler<EventArgs> ApplyButtonStyle;
 
         private void btn_New_Click(object sender, EventArgs e)
         {
@@ -106,6 +110,11 @@ namespace PasswordsCollection
                     NewPassTimer.Stop();
                 }
             }
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            ApplyButtonStyle?.Invoke(this, EventArgs.Empty);
         }
     }
 }

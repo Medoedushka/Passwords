@@ -289,6 +289,7 @@
             // 
             // pcb_ForeColor
             // 
+            this.pcb_ForeColor.BackColor = System.Drawing.Color.Aquamarine;
             this.pcb_ForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcb_ForeColor.Location = new System.Drawing.Point(114, 77);
             this.pcb_ForeColor.Name = "pcb_ForeColor";
@@ -309,6 +310,7 @@
             // 
             // pcb_BackColor
             // 
+            this.pcb_BackColor.BackColor = System.Drawing.Color.Violet;
             this.pcb_BackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcb_BackColor.Location = new System.Drawing.Point(114, 115);
             this.pcb_BackColor.Name = "pcb_BackColor";
@@ -351,6 +353,7 @@
             this.gunaButton1.TabIndex = 4;
             this.gunaButton1.Text = "Применить";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // MainForm
             // 

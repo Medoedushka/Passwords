@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,12 @@ namespace PasswordsCollection
 
         Panel PasswordsButtons { get; set; }
         Label LblStatus { get; set; }
+        ComboBox ButtonNames { get; set; }
 
+        PictureBox ForeColorButton { get; set; }
+        PictureBox BackColorButton { get; set; }
+
+        event EventHandler<EventArgs> ApplyButtonStyle;
         event EventHandler<EventArgs> LoadPasswords;
         event EventHandler<EventArgs> CreateNewPas;
         event Action<bool> OpenLogInForm;

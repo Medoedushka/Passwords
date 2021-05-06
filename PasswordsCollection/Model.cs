@@ -13,12 +13,14 @@ namespace PasswordsCollection
     {
         public string Name { get; set; }
         public string Password { get; set; }
+        public string ButtonFormat { get; set; }
         public Button UP_Button { get; set; }
 
-        public UserPasswords(string name, string pas)
+        public UserPasswords(string name, string pas, string format)
         {
             Name = name;
             Password = pas;
+            ButtonFormat = format;
         }
     }
 
@@ -58,7 +60,10 @@ namespace PasswordsCollection
                         continue;
 
                     string[] el = s.Split(':');
-                    userPasswords.Add(new UserPasswords(el[0], el[1]));
+                    int bracketInd = el[1].IndexOf('[');
+                    string format = el[1].Substring(bracketInd, el[1].IndexOf(']') - bracketInd + 1);
+                    el[1] = el[1].Remove(bracketInd, format.Length);
+                    userPasswords.Add(new UserPasswords(el[0], el[1], format));
                 }
             }
         }
@@ -69,14 +74,20 @@ namespace PasswordsCollection
             FillList();
             if (string.IsNullOrEmpty(FullPasswordsFile))
                 return null;
+
             Button[,] buttons = new Button[userPasswords.Count, 2];
             
             
             for(int i = 0; i < userPasswords.Count; i++)
             {
+                Color ForeColorBtn, BackColorBtn;
+                GetColorFromString(userPasswords[i].ButtonFormat, out ForeColorBtn, out BackColorBtn);
+
                 buttons[i, 0] = new Button
                 {
                     Text = userPasswords[i].Name,
+                    ForeColor = ForeColorBtn,
+                    BackColor = BackColorBtn,
                     TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
                     FlatStyle = FlatStyle.Flat,
                     Font = new System.Drawing.Font("Gotham Pro Medium", 11),
@@ -153,20 +164,36 @@ namespace PasswordsCollection
 
         public void ChangeButtonStyle(string ButtonName, Color ForeColor, Color BackColor)
         {
+            bool found = false;
             foreach(UserPasswords up in userPasswords)
             {
                 if (ButtonName == up.Name && up.UP_Button != null)
                 {
                     up.UP_Button.ForeColor = ForeColor;
                     up.UP_Button.BackColor = BackColor;
+                    found = true;
                     break;
                 }
-                else
-                {
-                    throw new Exception("Искомая кнопка не найдена!");
-                }
             }
+
+            if (found == false)
+                throw new Exception("Искомая кнопка не найдена!");
+
         }
 
+        private void GetColorFromString(string format, out Color foreColor, out Color backColor)
+        {
+            format = format.Remove(0, 1);
+            format = format.Remove(format.Length - 1, 1);
+            int r, g, b;
+            string[] colors = format.Split(';');
+            string[] foreColorStrings = colors[0].Split(',');
+            r = int.Parse(foreColorStrings[0]); g = int.Parse(foreColorStrings[1]); b = int.Parse(foreColorStrings[2]);
+            foreColor = Color.FromArgb(r, g, b);
+
+            string[] backColorStrings = colors[1].Split(',');
+            r = int.Parse(backColorStrings[0]); g = int.Parse(backColorStrings[1]); b = int.Parse(backColorStrings[2]);
+            backColor = Color.FromArgb(r, g, b);
+        }
     }
 }

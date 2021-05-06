@@ -116,5 +116,17 @@ namespace PasswordsCollection
         {
             ApplyButtonStyle?.Invoke(this, EventArgs.Empty);
         }
+
+        private void SetPcbColor(object sender, EventArgs e)
+        {
+            Button temp = (Button)sender;
+            ColorDialog cd = new ColorDialog();
+            cd.ShowDialog();
+            Color crrColor = cd.Color;
+            if (temp.Name == "btn_ColorPick1")
+                pcb_ForeColor.BackColor = crrColor;
+            else
+                pcb_BackColor.BackColor = crrColor;
+        }
     }
 }

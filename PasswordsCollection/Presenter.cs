@@ -115,6 +115,8 @@ namespace PasswordsCollection
             foreach(Button b in but)
             {
                 viewer.PasswordsButtons.Controls.Add(b);
+                if (b.Text != "")
+                    viewer.ButtonNames.Items.Add(b.Text);
             }
         }
 

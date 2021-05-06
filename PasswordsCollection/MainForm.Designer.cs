@@ -263,6 +263,7 @@
             // 
             // cmb_ButtonName
             // 
+            this.cmb_ButtonName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ButtonName.FormattingEnabled = true;
             this.cmb_ButtonName.Location = new System.Drawing.Point(114, 41);
             this.cmb_ButtonName.Name = "cmb_ButtonName";
@@ -307,6 +308,7 @@
             this.btn_ColorPick1.Size = new System.Drawing.Size(25, 25);
             this.btn_ColorPick1.TabIndex = 3;
             this.btn_ColorPick1.UseVisualStyleBackColor = true;
+            this.btn_ColorPick1.Click += new System.EventHandler(this.SetPcbColor);
             // 
             // pcb_BackColor
             // 
@@ -328,6 +330,7 @@
             this.btn_ColorPick2.Size = new System.Drawing.Size(25, 25);
             this.btn_ColorPick2.TabIndex = 3;
             this.btn_ColorPick2.UseVisualStyleBackColor = true;
+            this.btn_ColorPick2.Click += new System.EventHandler(this.SetPcbColor);
             // 
             // gunaButton1
             // 

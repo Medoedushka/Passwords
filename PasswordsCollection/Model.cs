@@ -66,6 +66,7 @@ namespace PasswordsCollection
                     userPasswords.Add(new UserPasswords(el[0], el[1], format));
                 }
             }
+            
         }
 
         public Button[,] CreatePassButtons()
@@ -131,7 +132,7 @@ namespace PasswordsCollection
                             {
                                 if (buttons[k, 0].Text == up.Name)
                                 {
-                                    string del = up.Name + ":" + up.Password + "\n";
+                                    string del = up.Name + ":" + up.Password + up.ButtonFormat + "\n";
                                     FullPasswordsFile = FullPasswordsFile.Remove(FullPasswordsFile.IndexOf(del), del.Length);
                                     using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
                                     {
@@ -155,7 +156,7 @@ namespace PasswordsCollection
         {
             if (FullPasswordsFile.Contains(name + ":"))
                 throw new Exception("Пароль с таким именем уже существует!");
-            FullPasswordsFile += name + ":" + password + "\n";
+            FullPasswordsFile += name + ":" + password + ConvertToStringFromColor(Color.Black, Color.Gold) +"\n";
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
             {
                 sw.Write(FullPasswordsFile);
@@ -172,6 +173,12 @@ namespace PasswordsCollection
                     up.UP_Button.ForeColor = ForeColor;
                     up.UP_Button.BackColor = BackColor;
                     found = true;
+                    up.ButtonFormat = ConvertToStringFromColor(ForeColor, BackColor);
+                    FullPasswordsFile = GenerateUPString();
+                    using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
+                    {
+                        sw.Write(FullPasswordsFile);
+                    }
                     break;
                 }
             }
@@ -179,6 +186,25 @@ namespace PasswordsCollection
             if (found == false)
                 throw new Exception("Искомая кнопка не найдена!");
 
+        }
+
+        private string GenerateUPString()
+        {
+            string result = "";
+            foreach(UserPasswords up in userPasswords)
+            {
+                string temp = up.Name + ":" + up.Password + up.ButtonFormat + "\n";
+                result += temp;
+            }
+            return result;
+        }
+
+        private string ConvertToStringFromColor(Color foreColor, Color backColor)
+        {
+            StringBuilder ColorFormat = new StringBuilder();
+            ColorFormat.AppendFormat("[{0},{1},{2};{3},{4},{5}]", foreColor.R, foreColor.G, foreColor.B, backColor.R,
+                backColor.G, backColor.B);
+            return ColorFormat.ToString();
         }
 
         private void GetColorFromString(string format, out Color foreColor, out Color backColor)

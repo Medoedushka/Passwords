@@ -109,6 +109,7 @@ namespace PasswordsCollection
 
         private void Viewer_LoadPasswords(object sender, EventArgs e)
         {
+            viewer.ButtonNames.Items.Clear();
             Button[,] but = _model.CreatePassButtons();
             if (but == null)
                 return;

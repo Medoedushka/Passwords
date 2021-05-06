@@ -128,6 +128,7 @@
             this.txb_Login.Name = "txb_Login";
             this.txb_Login.Size = new System.Drawing.Size(258, 17);
             this.txb_Login.TabIndex = 9;
+            this.txb_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txb_Login_KeyPress);
             // 
             // label1
             // 

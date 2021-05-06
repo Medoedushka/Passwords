@@ -95,5 +95,11 @@ namespace PasswordsCollection
             if (!AuthorizationSuccessful)
                 Application.Exit();
         }
+
+        private void txb_Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && txb_Login.Text != "")
+                pcb_Enter_Click(this, EventArgs.Empty);
+        }
     }
 }

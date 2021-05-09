@@ -33,8 +33,17 @@
             this.pnl_PasswordsContainer = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_ColorPick2 = new System.Windows.Forms.Button();
+            this.btn_ColorPick1 = new System.Windows.Forms.Button();
+            this.pcb_BackColor = new System.Windows.Forms.PictureBox();
+            this.pcb_ForeColor = new System.Windows.Forms.PictureBox();
+            this.cmb_ButtonName = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
             this.pnl_NewPass = new System.Windows.Forms.Panel();
             this.txb_NewPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,23 +54,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Close = new System.Windows.Forms.Button();
-            this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmb_ButtonName = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pcb_ForeColor = new System.Windows.Forms.PictureBox();
-            this.btn_ColorPick1 = new System.Windows.Forms.Button();
-            this.pcb_BackColor = new System.Windows.Forms.PictureBox();
-            this.btn_ColorPick2 = new System.Windows.Forms.Button();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.btn_AddNewPas = new PasswordsCollection.CircularButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.gunaGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_BackColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_ForeColor)).BeginInit();
             this.pnl_NewPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.gunaGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_ForeColor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_BackColor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +110,135 @@
             this.panel5.Size = new System.Drawing.Size(679, 444);
             this.panel5.TabIndex = 3;
             // 
+            // gunaGroupBox1
+            // 
+            this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGroupBox1.BaseColor = System.Drawing.Color.Gold;
+            this.gunaGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaGroupBox1.BorderSize = 1;
+            this.gunaGroupBox1.Controls.Add(this.gunaButton1);
+            this.gunaGroupBox1.Controls.Add(this.btn_ColorPick2);
+            this.gunaGroupBox1.Controls.Add(this.btn_ColorPick1);
+            this.gunaGroupBox1.Controls.Add(this.pcb_BackColor);
+            this.gunaGroupBox1.Controls.Add(this.pcb_ForeColor);
+            this.gunaGroupBox1.Controls.Add(this.cmb_ButtonName);
+            this.gunaGroupBox1.Controls.Add(this.label7);
+            this.gunaGroupBox1.Controls.Add(this.label6);
+            this.gunaGroupBox1.Controls.Add(this.label5);
+            this.gunaGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaGroupBox1.Location = new System.Drawing.Point(327, 39);
+            this.gunaGroupBox1.Name = "gunaGroupBox1";
+            this.gunaGroupBox1.Size = new System.Drawing.Size(344, 194);
+            this.gunaGroupBox1.TabIndex = 16;
+            this.gunaGroupBox1.Text = "Форматирование кнопки";
+            this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaButton1.BorderSize = 2;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Gotham Pro Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(6, 151);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(142)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(109, 34);
+            this.gunaButton1.TabIndex = 4;
+            this.gunaButton1.Text = "Применить";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
+            // btn_ColorPick2
+            // 
+            this.btn_ColorPick2.FlatAppearance.BorderSize = 0;
+            this.btn_ColorPick2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ColorPick2.Image = ((System.Drawing.Image)(resources.GetObject("btn_ColorPick2.Image")));
+            this.btn_ColorPick2.Location = new System.Drawing.Point(220, 115);
+            this.btn_ColorPick2.Name = "btn_ColorPick2";
+            this.btn_ColorPick2.Size = new System.Drawing.Size(25, 25);
+            this.btn_ColorPick2.TabIndex = 3;
+            this.btn_ColorPick2.UseVisualStyleBackColor = true;
+            this.btn_ColorPick2.Click += new System.EventHandler(this.SetPcbColor);
+            // 
+            // btn_ColorPick1
+            // 
+            this.btn_ColorPick1.FlatAppearance.BorderSize = 0;
+            this.btn_ColorPick1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ColorPick1.Image = ((System.Drawing.Image)(resources.GetObject("btn_ColorPick1.Image")));
+            this.btn_ColorPick1.Location = new System.Drawing.Point(220, 77);
+            this.btn_ColorPick1.Name = "btn_ColorPick1";
+            this.btn_ColorPick1.Size = new System.Drawing.Size(25, 25);
+            this.btn_ColorPick1.TabIndex = 3;
+            this.btn_ColorPick1.UseVisualStyleBackColor = true;
+            this.btn_ColorPick1.Click += new System.EventHandler(this.SetPcbColor);
+            // 
+            // pcb_BackColor
+            // 
+            this.pcb_BackColor.BackColor = System.Drawing.Color.Gold;
+            this.pcb_BackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcb_BackColor.Location = new System.Drawing.Point(114, 115);
+            this.pcb_BackColor.Name = "pcb_BackColor";
+            this.pcb_BackColor.Size = new System.Drawing.Size(100, 25);
+            this.pcb_BackColor.TabIndex = 2;
+            this.pcb_BackColor.TabStop = false;
+            // 
+            // pcb_ForeColor
+            // 
+            this.pcb_ForeColor.BackColor = System.Drawing.Color.Black;
+            this.pcb_ForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pcb_ForeColor.Location = new System.Drawing.Point(114, 77);
+            this.pcb_ForeColor.Name = "pcb_ForeColor";
+            this.pcb_ForeColor.Size = new System.Drawing.Size(100, 25);
+            this.pcb_ForeColor.TabIndex = 2;
+            this.pcb_ForeColor.TabStop = false;
+            // 
+            // cmb_ButtonName
+            // 
+            this.cmb_ButtonName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ButtonName.FormattingEnabled = true;
+            this.cmb_ButtonName.Location = new System.Drawing.Point(114, 41);
+            this.cmb_ButtonName.Name = "cmb_ButtonName";
+            this.cmb_ButtonName.Size = new System.Drawing.Size(206, 25);
+            this.cmb_ButtonName.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 17);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Цвет фона:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 17);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Цвет текста:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Имя кнопки:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -119,20 +248,6 @@
             this.label1.Size = new System.Drawing.Size(162, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Created by Medoed v2.0";
-            // 
-            // btn_AddNewPas
-            // 
-            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
-            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
-            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
-            this.btn_AddNewPas.Name = "btn_AddNewPas";
-            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
-            this.btn_AddNewPas.TabIndex = 7;
-            this.btn_AddNewPas.UseVisualStyleBackColor = false;
-            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
             // 
             // pnl_NewPass
             // 
@@ -229,134 +344,19 @@
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
-            // gunaGroupBox1
+            // btn_AddNewPas
             // 
-            this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGroupBox1.BaseColor = System.Drawing.Color.Gold;
-            this.gunaGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaGroupBox1.BorderSize = 1;
-            this.gunaGroupBox1.Controls.Add(this.gunaButton1);
-            this.gunaGroupBox1.Controls.Add(this.btn_ColorPick2);
-            this.gunaGroupBox1.Controls.Add(this.btn_ColorPick1);
-            this.gunaGroupBox1.Controls.Add(this.pcb_BackColor);
-            this.gunaGroupBox1.Controls.Add(this.pcb_ForeColor);
-            this.gunaGroupBox1.Controls.Add(this.cmb_ButtonName);
-            this.gunaGroupBox1.Controls.Add(this.label7);
-            this.gunaGroupBox1.Controls.Add(this.label6);
-            this.gunaGroupBox1.Controls.Add(this.label5);
-            this.gunaGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaGroupBox1.Location = new System.Drawing.Point(327, 39);
-            this.gunaGroupBox1.Name = "gunaGroupBox1";
-            this.gunaGroupBox1.Size = new System.Drawing.Size(344, 194);
-            this.gunaGroupBox1.TabIndex = 16;
-            this.gunaGroupBox1.Text = "Форматирование кнопки";
-            this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Имя кнопки:";
-            // 
-            // cmb_ButtonName
-            // 
-            this.cmb_ButtonName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_ButtonName.FormattingEnabled = true;
-            this.cmb_ButtonName.Location = new System.Drawing.Point(114, 41);
-            this.cmb_ButtonName.Name = "cmb_ButtonName";
-            this.cmb_ButtonName.Size = new System.Drawing.Size(206, 25);
-            this.cmb_ButtonName.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Цвет текста:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Цвет фона:";
-            // 
-            // pcb_ForeColor
-            // 
-            this.pcb_ForeColor.BackColor = System.Drawing.Color.Aquamarine;
-            this.pcb_ForeColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcb_ForeColor.Location = new System.Drawing.Point(114, 77);
-            this.pcb_ForeColor.Name = "pcb_ForeColor";
-            this.pcb_ForeColor.Size = new System.Drawing.Size(100, 25);
-            this.pcb_ForeColor.TabIndex = 2;
-            this.pcb_ForeColor.TabStop = false;
-            // 
-            // btn_ColorPick1
-            // 
-            this.btn_ColorPick1.FlatAppearance.BorderSize = 0;
-            this.btn_ColorPick1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ColorPick1.Image = ((System.Drawing.Image)(resources.GetObject("btn_ColorPick1.Image")));
-            this.btn_ColorPick1.Location = new System.Drawing.Point(220, 77);
-            this.btn_ColorPick1.Name = "btn_ColorPick1";
-            this.btn_ColorPick1.Size = new System.Drawing.Size(25, 25);
-            this.btn_ColorPick1.TabIndex = 3;
-            this.btn_ColorPick1.UseVisualStyleBackColor = true;
-            this.btn_ColorPick1.Click += new System.EventHandler(this.SetPcbColor);
-            // 
-            // pcb_BackColor
-            // 
-            this.pcb_BackColor.BackColor = System.Drawing.Color.Violet;
-            this.pcb_BackColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcb_BackColor.Location = new System.Drawing.Point(114, 115);
-            this.pcb_BackColor.Name = "pcb_BackColor";
-            this.pcb_BackColor.Size = new System.Drawing.Size(100, 25);
-            this.pcb_BackColor.TabIndex = 2;
-            this.pcb_BackColor.TabStop = false;
-            // 
-            // btn_ColorPick2
-            // 
-            this.btn_ColorPick2.FlatAppearance.BorderSize = 0;
-            this.btn_ColorPick2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ColorPick2.Image = ((System.Drawing.Image)(resources.GetObject("btn_ColorPick2.Image")));
-            this.btn_ColorPick2.Location = new System.Drawing.Point(220, 115);
-            this.btn_ColorPick2.Name = "btn_ColorPick2";
-            this.btn_ColorPick2.Size = new System.Drawing.Size(25, 25);
-            this.btn_ColorPick2.TabIndex = 3;
-            this.btn_ColorPick2.UseVisualStyleBackColor = true;
-            this.btn_ColorPick2.Click += new System.EventHandler(this.SetPcbColor);
-            // 
-            // gunaButton1
-            // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaButton1.BorderSize = 2;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Gotham Pro Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(6, 151);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(198)))), ((int)(((byte)(142)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(129)))), ((int)(((byte)(0)))));
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(109, 34);
-            this.gunaButton1.TabIndex = 4;
-            this.gunaButton1.Text = "Применить";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.btn_AddNewPas.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNewPas.FlatAppearance.BorderSize = 0;
+            this.btn_AddNewPas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddNewPas.Font = new System.Drawing.Font("Gotham Pro Medium", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNewPas.Image = global::PasswordsCollection.Properties.Resources.plus_math_30px;
+            this.btn_AddNewPas.Location = new System.Drawing.Point(20, 377);
+            this.btn_AddNewPas.Name = "btn_AddNewPas";
+            this.btn_AddNewPas.Size = new System.Drawing.Size(50, 50);
+            this.btn_AddNewPas.TabIndex = 7;
+            this.btn_AddNewPas.UseVisualStyleBackColor = false;
+            this.btn_AddNewPas.Click += new System.EventHandler(this.btn_AddNewPas_Click);
             // 
             // MainForm
             // 
@@ -375,13 +375,13 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.gunaGroupBox1.ResumeLayout(false);
+            this.gunaGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_BackColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_ForeColor)).EndInit();
             this.pnl_NewPass.ResumeLayout(false);
             this.pnl_NewPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.gunaGroupBox1.ResumeLayout(false);
-            this.gunaGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_ForeColor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_BackColor)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -68,11 +68,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gotham Pro Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(342, 238);
+            this.label3.Location = new System.Drawing.Point(340, 238);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 13);
+            this.label3.Size = new System.Drawing.Size(162, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Created by Medoed v1.0";
+            this.label3.Text = "Created by Medoed v2.0";
             // 
             // pictureBox1
             // 

@@ -23,10 +23,7 @@ namespace PasswordsCollection
         const string PASSWORDS_PATH = "data.txt";
         string FullPasswordsFile;
 
-        public Model()
-        {
-
-        }
+        public Model() { }
 
         private void FillList()
         {

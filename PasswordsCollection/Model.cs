@@ -9,21 +9,6 @@ using System.Drawing;
 
 namespace PasswordsCollection
 {
-    public class UserPasswords
-    {
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string ButtonFormat { get; set; }
-        public Button UP_Button { get; set; }
-
-        public UserPasswords(string name, string pas, string format)
-        {
-            Name = name;
-            Password = pas;
-            ButtonFormat = format;
-        }
-    }
-
     public class Model
     {
         public event Action<int> CopiedToClipboard;
@@ -54,23 +39,15 @@ namespace PasswordsCollection
                 FullPasswordsFile.Replace("\r", "");
                 string[] lines = FullPasswordsFile.Split('\n');
 
-                foreach (string s in lines)
+                foreach (string l in lines)
                 {
-                    if (string.IsNullOrEmpty(s))
+                    if (string.IsNullOrEmpty(l))
                         continue;
 
-                    string[] el = s.Split(':');
-                    int bracketInd = el[1].IndexOf('[');
-                    string format;
-
-                    //проверка для старых версий, где отсутствовала строка с форматом кнопки
-                    if (bracketInd == -1)
-                        format = ConvertToStringFromColor(Color.Black, Color.Gold);
-                    else
-                    {
-                        format = el[1].Substring(bracketInd, el[1].IndexOf(']') - bracketInd + 1);
-                        el[1] = el[1].Remove(bracketInd, format.Length);
-                    }
+                    string[] el = l.Split(':');
+                    string format = FormatControler.GetStringFormatFromLine(l);
+                    el[1] = el[1].Remove(el[1].IndexOf(format), format.Length);
+                    
                     userPasswords.Add(new UserPasswords(el[0], el[1], format));
                 }
             }
@@ -86,22 +63,18 @@ namespace PasswordsCollection
 
             Button[,] buttons = new Button[userPasswords.Count, 2];
             
-            
             for(int i = 0; i < userPasswords.Count; i++)
             {
-                Color ForeColorBtn, BackColorBtn;
-                GetColorFromString(userPasswords[i].ButtonFormat, out ForeColorBtn, out BackColorBtn);
-
                 buttons[i, 0] = new Button
                 {
                     Text = userPasswords[i].Name,
-                    ForeColor = ForeColorBtn,
-                    BackColor = BackColorBtn,
-                    TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+                    ForeColor = userPasswords[i].FormatControler.ButtonForeColor,
+                    BackColor = userPasswords[i].FormatControler.ButtonBackColor,
+                    TextAlign = ContentAlignment.MiddleLeft,
                     FlatStyle = FlatStyle.Flat,
-                    Font = new System.Drawing.Font("Gotham Pro Medium", 11),
-                    Size = new System.Drawing.Size(BUTTON_WIDTH, BUTTON_HEIGHT),
-                    Location = new System.Drawing.Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
+                    Font = new Font("Gotham Pro Medium", 11),
+                    Size = new Size(BUTTON_WIDTH, BUTTON_HEIGHT),
+                    Location = new Point(5, INDENT * (i + 1) + BUTTON_HEIGHT * i),
                 };
                 buttons[i, 0].FlatAppearance.BorderSize = 0;
                 buttons[i, 0].Click += (object sender, EventArgs e) => {
@@ -124,8 +97,8 @@ namespace PasswordsCollection
                 {
                     Text = "",
                     FlatStyle = FlatStyle.Flat,
-                    Size = new System.Drawing.Size(25, BUTTON_HEIGHT),
-                    Location = new System.Drawing.Point(10 + BUTTON_WIDTH, INDENT * (i + 1) + BUTTON_HEIGHT * i),
+                    Size = new Size(25, BUTTON_HEIGHT),
+                    Location = new Point(10 + BUTTON_WIDTH, INDENT * (i + 1) + BUTTON_HEIGHT * i),
                     Image = Properties.Resources.trash_25px
                 };
                 buttons[i, 1].FlatAppearance.BorderSize = 0;
@@ -140,7 +113,7 @@ namespace PasswordsCollection
                             {
                                 if (buttons[k, 0].Text == up.Name)
                                 {
-                                    string del = up.Name + ":" + up.Password + up.ButtonFormat + "\n";
+                                    string del = up.Name + ":" + up.Password + up.FormatControler.ToString() + "\n";
                                     FullPasswordsFile = FullPasswordsFile.Remove(FullPasswordsFile.IndexOf(del), del.Length);
                                     using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
                                     {
@@ -162,9 +135,10 @@ namespace PasswordsCollection
 
         public void AddNewPassword(string name, string password)
         {
+            FormatControler temp = new FormatControler("");
             if (FullPasswordsFile.Contains(name + ":"))
                 throw new Exception("Пароль с таким именем уже существует!");
-            FullPasswordsFile += name + ":" + password + ConvertToStringFromColor(Color.Black, Color.Gold) +"\n";
+            FullPasswordsFile += name + ":" + password + temp.ToString() +"\n";
             using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
             {
                 sw.Write(FullPasswordsFile);
@@ -180,9 +154,10 @@ namespace PasswordsCollection
                 {
                     up.UP_Button.ForeColor = ForeColor;
                     up.UP_Button.BackColor = BackColor;
+                    up.FormatControler.ButtonForeColor = ForeColor;
+                    up.FormatControler.ButtonBackColor = BackColor;
                     found = true;
-                    up.ButtonFormat = ConvertToStringFromColor(ForeColor, BackColor);
-                    FullPasswordsFile = GenerateUPString();
+                    FullPasswordsFile = GenerateUPStrings();
                     using (StreamWriter sw = new StreamWriter(PASSWORDS_PATH, false))
                     {
                         sw.Write(FullPasswordsFile);
@@ -196,38 +171,15 @@ namespace PasswordsCollection
 
         }
 
-        private string GenerateUPString()
+        private string GenerateUPStrings()
         {
             string result = "";
             foreach(UserPasswords up in userPasswords)
             {
-                string temp = up.Name + ":" + up.Password + up.ButtonFormat + "\n";
+                string temp = up.Name + ":" + up.Password + up.FormatControler.ToString() + "\n";
                 result += temp;
             }
             return result;
-        }
-
-        private string ConvertToStringFromColor(Color foreColor, Color backColor)
-        {
-            StringBuilder ColorFormat = new StringBuilder();
-            ColorFormat.AppendFormat("[{0},{1},{2};{3},{4},{5}]", foreColor.R, foreColor.G, foreColor.B, backColor.R,
-                backColor.G, backColor.B);
-            return ColorFormat.ToString();
-        }
-
-        private void GetColorFromString(string format, out Color foreColor, out Color backColor)
-        {
-            format = format.Remove(0, 1);
-            format = format.Remove(format.Length - 1, 1);
-            int r, g, b;
-            string[] colors = format.Split(';');
-            string[] foreColorStrings = colors[0].Split(',');
-            r = int.Parse(foreColorStrings[0]); g = int.Parse(foreColorStrings[1]); b = int.Parse(foreColorStrings[2]);
-            foreColor = Color.FromArgb(r, g, b);
-
-            string[] backColorStrings = colors[1].Split(',');
-            r = int.Parse(backColorStrings[0]); g = int.Parse(backColorStrings[1]); b = int.Parse(backColorStrings[2]);
-            backColor = Color.FromArgb(r, g, b);
         }
     }
 }
